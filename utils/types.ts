@@ -4,3 +4,4 @@ interface KeyValueResponse {
 }
 
 interface Year extends KeyValueResponse {}
+interface Make extends KeyValueResponse {}
