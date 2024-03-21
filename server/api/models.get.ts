@@ -9,11 +9,11 @@ export default defineEventHandler(async (event) => {
   }
 
   const { result }: { result: KeyValueResponse[] } = await $fetch(
-    iConfiguratorsAPI.baseURL,
+    iConfiguratorsAPI.endpoints.models,
     {
+      baseURL: iConfiguratorsAPI.baseURL,
       query: {
         configID: iConfiguratorsAPI.configID,
-        endpoint: iConfiguratorsAPI.endpoints.models,
         makeID: make,
         yearID: year,
       },

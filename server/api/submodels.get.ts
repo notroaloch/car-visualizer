@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { result }: { result: SubmodelsResponse[] } = await $fetch(
+  const { result }: { result: RawSubmodel[] } = await $fetch(
     fitmentAtlasAPI.endpoints.submodels,
     {
       baseURL: fitmentAtlasAPI.baseURL,
@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
     }
   );
 
-  const submodels: Submodel[] = result.map((e: SubmodelsResponse) => {
+  const submodels: Submodel[] = result.map((e: RawSubmodel) => {
     return <Submodel>{
       key: e.vcdB_SubmodelID,
       value: e.submodelName,

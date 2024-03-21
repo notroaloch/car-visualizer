@@ -102,8 +102,16 @@
 
   const handleFormSubmit = async () => {
     isLoading.value = true;
-    // TODO: fetch vehicle data
+    const data = await $fetch('/api/vehicle', {
+      params: {
+        year: year.value?.key,
+        make: make.value?.key,
+        model: model.value?.key,
+        submodel: submodel.value?.key,
+      },
+    });
     isLoading.value = false;
+    console.log(data);
   };
 </script>
 
