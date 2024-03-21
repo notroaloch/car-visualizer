@@ -13,7 +13,7 @@
       </p>
     </div>
     <UButton
-      @click="navigateTo('/search')"
+      to="/search"
       color="primary"
       variant="ghost"
       label="Search Vehicle"
