@@ -4,17 +4,19 @@
       Color: {{ vehicleColor.name }}
     </p>
 
-    <UAvatarGroup size="lg">
-      <UAvatar
-        v-for="color in vehicleVariant.colors"
-        :key="color.id"
-        :src="color.swatchURL"
-        :alt="color.name"
-        @click="handleColorChange(color)"
-        :chip-color="color.id === vehicleColor.id ? 'primary' : ''"
-        class="cursor-pointer hover:scale-105"
-      />
-    </UAvatarGroup>
+    <div class="overflow-scroll py-2 px-1">
+      <UAvatarGroup size="lg">
+        <UAvatar
+          v-for="color in vehicleVariant.colors"
+          :key="color.id"
+          :src="color.swatchURL"
+          :alt="color.name"
+          @click="handleColorChange(color)"
+          :chip-color="color.id === vehicleColor.id ? 'primary' : ''"
+          class="cursor-pointer hover:scale-105"
+        />
+      </UAvatarGroup>
+    </div>
   </div>
 </template>
 

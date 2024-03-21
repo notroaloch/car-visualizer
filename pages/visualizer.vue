@@ -2,7 +2,7 @@
   <UiHeadNavigation link="/search" page-title="Vehicle Visualizer" />
   <div class="flex flex-col gap-12 my-12">
     <Visualizer />
-    <div class="flex flex-col gap-5 lg:flex-row">
+    <div class="flex flex-col gap-5 md:grid md:grid-cols-3">
       <UCard>
         <template #header>
           <p class="text-xl font-semibold tracking-tight">
@@ -14,7 +14,7 @@
           <VisualizerColorSelector />
         </div>
       </UCard>
-      <UCard>
+      <UCard class="md:col-span-2">
         <template #header>
           <p class="text-xl font-semibold tracking-tight">
             Vehicle Information

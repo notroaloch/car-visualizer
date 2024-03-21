@@ -48,6 +48,13 @@ export const processRawVehicle = (rawData: RawVehicleResponse) => {
   const variants = rawData.vehicle;
   const colors = rawData.colors;
 
+  if (variantsID.length === 0) {
+    return <Vehicle>{
+      fmk: Number(rawData.fmk),
+      variants: <any>[],
+    };
+  }
+
   const vehicleVariants = variantsID.map((variantID: string) => {
     const currentVariantColors = colors[variantID].map((color: RawColor) => {
       return <Color>{
