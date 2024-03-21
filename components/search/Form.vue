@@ -86,6 +86,8 @@
 </template>
 
 <script setup lang="ts">
+  const { vehicle } = useVehicleVisualizer();
+
   const {
     year,
     make,
@@ -102,7 +104,7 @@
 
   const handleFormSubmit = async () => {
     isLoading.value = true;
-    const data = await $fetch('/api/vehicle', {
+    const data: Vehicle = await $fetch('/api/vehicle', {
       params: {
         year: year.value?.key,
         make: make.value?.key,
@@ -110,8 +112,11 @@
         submodel: submodel.value?.key,
       },
     });
+
+    vehicle.value = data;
     isLoading.value = false;
-    console.log(data);
+
+    await navigateTo('/visualizer');
   };
 </script>
 

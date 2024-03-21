@@ -20,6 +20,7 @@ interface Vehicle {
 interface VehicleVariant {
   id: number;
   name: string;
+  description: string;
   imageURL: string;
   wheels: {
     front: Wheel;

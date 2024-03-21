@@ -65,6 +65,7 @@ export const processRawVehicle = (rawData: RawVehicleResponse) => {
     return <VehicleVariant>{
       id: currentVariantInfo?.vehicleId,
       name: currentVariantInfo?.bodyType,
+      description: currentVariantInfo?.description,
       imageURL: currentVariantInfo?.baseImage,
       wheels: {
         front: {

@@ -1,4 +1,4 @@
-export const useSearchFormStore = defineStore('searchFormStore', () => {
+export const useVehicleStore = defineStore('vehicleStore', () => {
   // Selected values from SelectMenu
   const year: Ref<Year | undefined> = useState('year');
   const make: Ref<Make | undefined> = useState('make');
@@ -11,6 +11,12 @@ export const useSearchFormStore = defineStore('searchFormStore', () => {
   const models: Ref<Model[]> = useState('models', () => []);
   const submodels: Ref<Submodel[]> = useState('submodels', () => []);
 
+  // Vehicle information
+
+  const vehicle: Ref<Vehicle> = useState('vehicle');
+  const vehicleVariant: Ref<VehicleVariant> = useState('vehicleVariant');
+  const vehicleColor: Ref<Color> = useState('vehicleColor');
+
   return {
     year,
     make,
@@ -20,5 +26,8 @@ export const useSearchFormStore = defineStore('searchFormStore', () => {
     makes,
     models,
     submodels,
+    vehicle,
+    vehicleVariant,
+    vehicleColor,
   };
 });

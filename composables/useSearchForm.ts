@@ -1,7 +1,7 @@
 export const useSearchForm = () => {
-  const searchFormStore = useSearchFormStore();
+  const vehicleStore = useVehicleStore();
   const { year, make, model, submodel, years, makes, models, submodels } =
-    storeToRefs(searchFormStore);
+    storeToRefs(vehicleStore);
 
   const resetRefs = (singles: Ref<any | undefined>[], arrays: Ref<any[]>[]) => {
     singles.map((singleRef) => {
