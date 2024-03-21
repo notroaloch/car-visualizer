@@ -8,6 +8,49 @@ interface Make extends KeyValueResponse {}
 interface Model extends KeyValueResponse {}
 interface Submodel extends KeyValueResponse {}
 
+interface Vehicle {
+  fmk: number;
+  year: Year;
+  make: Make;
+  model: Model;
+  submodel: Submodel;
+  variants: VehicleVariant[];
+}
+
+interface VehicleVariant {
+  id: number;
+  name: string;
+  imageURL: string;
+  wheels: {
+    front: Wheel;
+    rear: Wheel;
+  };
+  colors: Color[];
+}
+
+interface Wheel {
+  imageURL: string;
+  position: Point;
+  scale: Scale;
+}
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+interface Scale {
+  width: number;
+  height: never;
+}
+
+interface Color {
+  id: number;
+  name: string;
+  imageURL: string;
+  swatchURL: string;
+}
+
 // INTERFACES FOR HTTP RESPONSES FROM API
 
 interface RawSubmodel {
