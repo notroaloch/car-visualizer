@@ -1,5 +1,16 @@
 <template>
   <div class="mx-auto w-full grid gap-5 md:w-2/3 lg:w-2/4">
+    <UModal v-model="isModalOpen">
+      <UCard>
+        <template #header>
+          <p class="text-xl font-semibold tracking-tight">No Images Found</p>
+        </template>
+        <p>
+          We couldn't find any images for your search. Try with another vehicle
+          ;)
+        </p>
+      </UCard>
+    </UModal>
     <!-- YEAR SELECT -->
     <UFormGroup label="Year">
       <USelectMenu
@@ -101,9 +112,11 @@
   } = useSearchForm();
 
   const isLoading = useState('isLoading', () => false);
+  const isModalOpen = useState('isModalOpen', () => false);
 
   const handleFormSubmit = async () => {
     isLoading.value = true;
+
     const data: Vehicle = await $fetch('/api/vehicle', {
       params: {
         year: year.value?.key,
@@ -115,6 +128,11 @@
 
     vehicle.value = data;
     isLoading.value = false;
+
+    if (vehicle.value.variants.length === 0) {
+      isModalOpen.value = true;
+      return;
+    }
 
     await navigateTo('/visualizer');
   };
