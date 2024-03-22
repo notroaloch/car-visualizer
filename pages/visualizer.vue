@@ -1,12 +1,15 @@
 <template>
-  <UiHeadNavigation link="/search" page-title="Vehicle Visualizer" />
+  <UiHeadNavigation
+    link="/search"
+    :page-title="$t('visualizer-header-title')"
+  />
   <div class="flex flex-col gap-12 my-12">
     <Visualizer />
     <div class="flex flex-col gap-5 md:grid md:grid-cols-3">
       <UCard>
         <template #header>
           <p class="text-xl font-semibold tracking-tight">
-            Vehicle Configuration
+            {{ $t('visualizer-config-card-title') }}
           </p>
         </template>
         <div class="flex flex-col gap-5">
@@ -17,7 +20,7 @@
       <UCard class="md:col-span-2">
         <template #header>
           <p class="text-xl font-semibold tracking-tight">
-            Vehicle Information
+            {{ $t('visualizer-info-card-title') }}
           </p>
         </template>
         <div class="flex flex-col gap-5">

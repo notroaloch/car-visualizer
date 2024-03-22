@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-1">
     <p class="text-sm font-medium text-gray-700 dark:text-gray-200">
-      Color: {{ vehicleColor.name }}
+      {{ $t('visualizer-config-card-color') }}: {{ vehicleColor.name }}
     </p>
 
     <div class="overflow-scroll py-2 px-1">

@@ -7,6 +7,7 @@
     </h1>
     <div>
       <NavbarToggleColorMode />
+      <NavbarToggleLanguage />
     </div>
   </div>
 </template>

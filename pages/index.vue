@@ -9,14 +9,14 @@
       <p
         class="text-sm md:text-xl font-light tracking-tight text-center text-gray-700 dark:text-gray-300"
       >
-        explore a wide variety of vehicle imagery
+        {{ $t('index-header-subtitle') }}
       </p>
     </div>
     <UButton
       to="/search"
       color="primary"
       variant="ghost"
-      label="Search Vehicle"
+      :label="$t('index-button-search')"
       class="text-sm md:text-xl transition-all"
     />
   </div>
