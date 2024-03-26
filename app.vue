@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
-    <UContainer>
-      <Navbar />
+    <Navbar />
+    <UContainer class="pt-[80px]">
       <NuxtPage />
     </UContainer>
   </NuxtLayout>
