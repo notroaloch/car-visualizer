@@ -112,7 +112,14 @@ export const processRawVehicle = (rawData: RawVehicleResponse) => {
   };
 };
 
-export const getVehicleData = async (fmk: number, bodyType: number) => {
+export const getVehicleData = async (
+  year: number,
+  make: number,
+  model: number,
+  submodel: number,
+  fmk: number,
+  bodyType: number
+) => {
   // THIS DATA NEEDS TO BE PROCCESSED IN ORDER TO SHOW
   // THE CORRESPONDING MASK COLOR WHEN A VEHICLE HAS MORE THAN ONE
   // OPTION AVAILABLE. ALSO GENERATES A BASE IMAGE WITH WHEELS IN
@@ -123,6 +130,10 @@ export const getVehicleData = async (fmk: number, bodyType: number) => {
     {
       baseURL: iConfiguratorsAPI.baseURL,
       params: {
+        year,
+        makeId: make,
+        modelId: model,
+        submodelId: submodel,
         bodyTypeID: bodyType,
         endpoint: iConfiguratorsAPI.endpoints.vehicle,
         fmk,

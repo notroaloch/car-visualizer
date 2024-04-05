@@ -21,10 +21,14 @@
 </template>
 
 <script setup lang="ts">
-  const { vehicleVariant, vehicleColor } = useVehicleVisualizer();
+  const { isLoading, vehicleVariant, vehicleColor } = useVehicleVisualizer();
 
   const handleColorChange = (color: Color) => {
-    vehicleColor.value = color;
+    isLoading.value = true;
+    setTimeout(() => {
+      vehicleColor.value = color;
+      isLoading.value = false;
+    }, 100);
   };
 </script>
 

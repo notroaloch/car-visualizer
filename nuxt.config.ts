@@ -14,4 +14,8 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     defaultLocale: 'en-US',
   },
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+  },
 });

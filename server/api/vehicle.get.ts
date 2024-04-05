@@ -17,7 +17,14 @@ export default defineEventHandler(async (event) => {
 
   const vehicleFMK = await getVehicleFMK(year, make, model, submodel);
   const vehicleBodyType = await getVehicleBodyType(vehicleFMK);
-  const vehicleData = await getVehicleData(vehicleFMK, vehicleBodyType);
+  const vehicleData = await getVehicleData(
+    year,
+    make,
+    model,
+    submodel,
+    vehicleFMK,
+    vehicleBodyType
+  );
 
   return vehicleData;
 });

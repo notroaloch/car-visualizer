@@ -1,4 +1,5 @@
 export const useVehicleVisualizer = () => {
+  const isLoading = useState('isLoading', () => false);
   const vehicleStore = useVehicleStore();
   const { year, make, model, submodel, vehicle, vehicleVariant, vehicleColor } =
     storeToRefs(vehicleStore);
@@ -12,12 +13,15 @@ export const useVehicleVisualizer = () => {
   });
 
   watch(vehicleVariant, (newValue) => {
+    isLoading.value = true;
     vehicleColor.value = vehicleVariant.value.colors[0];
+    isLoading.value = false;
   });
 
   return {
     vehicle,
     vehicleVariant,
     vehicleColor,
+    isLoading,
   };
 };

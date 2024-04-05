@@ -146,6 +146,8 @@
     vehicle.value = data;
     isLoading.value = false;
 
+    console.log(vehicle.value);
+
     if (vehicle.value.variants.length === 0) {
       isModalOpen.value = true;
       return;
